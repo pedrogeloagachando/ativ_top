@@ -19,29 +19,27 @@ $usuario1 = mysqli_fetch_assoc($resultado);
 $noo = $usuario1['nome'];
 
 $foto = $usuario1['imagem'];
-
-
-
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-       
-    <a href='foto.php'><img src="<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
+    <fieldset>
+        <legend>
+            <h1>Perfil</h1>
+        </legend>
+        <a href='foto.php'><img src="<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
 
-    <h1><?php echo"$noo<br>"; ?></h1>
-    
-    <a href='form_alterar.php'>Alterar perfil:</a>
+        <h2><?php echo "Olá $noo!<br>"; ?></h2>
 
+        <h4><a href='form_alterar.php'>Alterar perfil:</a></h4>
+    </fieldset>
 </body>
-
 </html>

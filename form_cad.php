@@ -9,11 +9,18 @@
 
 <body>
     <form action="cadastrar.php" method="post">
-        <label>Nome de usuário: <input type="text" name="nome"></label><br><br>
-        <label>Email: <input type="email" name="email"></label><br><br>
-        <label>Senha: <input type="password" name="senha" required></label><br>
-        <br>
-        <input type="submit" value="Cadastrar-se">
+        <fieldset>
+            <legend>
+                <h1>Cadastro</h1>
+            </legend>
+            <h4><label>Nome de usuário: <input type="text" name="nome"></label></h4>
+            <h4><label>Email: <input type="email" name="email"></label></h4>
+            <h4><label>Senha: <input type="password" name="senha" required></label></h4>
+            <br>
+            <input type="submit" value="Cadastrar-se">
+
+            <h4><a href="form_login.php">Ir para  login</a></h4>
+        </fieldset>
     </form>
 </body>
 

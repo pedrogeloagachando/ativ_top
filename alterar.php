@@ -2,8 +2,10 @@
 
 session_start();
 
+
+
 if (!isset($_SESSION['email'])) {
-    echo "não está logado";
+    echo "Você não está logado";
     die();
 } else {
 

@@ -20,29 +20,32 @@ $noo = $usuario1['nome'];
 
 $foto = $usuario1['imagem'];
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-
-
-
-
-
-<form action="alterar.php" method="post">
-    <h1>Foto atul</h1><br>
-    <a href='foto.php'><img src="<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
-Trocar imagem:<br>
-    <input type="file" name="arquivo"><br><br>
-
-    
-
-
-        <input type="submit" value="Enviar">
-</form>
+    <form action="alterar.php" method="post">
+            <legend>
+                <h1>Foto atual</h1>
+            </legend>
+            <a href='foto.php'><img src="<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
+            
+            <hr>
+            
+            <br>Trocar imagem:<br>
+            <input type="file" name="arquivo"><br><br>
+            <input type="submit" value="Enviar">
+            <h4><a href="perfil.php">Voltar</a></h4>
+    </form>
 </body>
+
 </html>

@@ -5,5 +5,5 @@ $config = [
     'user' => 'root',
     'pass' => '',
     'db' => 'topicos',
-    
+
 ];

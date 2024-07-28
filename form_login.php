@@ -9,11 +9,17 @@
 
 <body>
     <form action="login.php" method="post">
-        
-        <label>Email: <input type="email" name="email"></label><br><br>
-        <label>Senha: <input type="password" name="senha" required></label><br>
-        <br>
-        <input type="submit" value="login">
+        <fieldset>
+            <legend>
+                <h1>Login</h1>
+            </legend>
+
+            <h4><label>Email: <input type="email" name="email"></label></h4>
+            <h4><label>Senha: <input type="password" name="senha" required></label></h4>
+            <br>
+            <input type="submit" value="Logar">
+            <h4><a href="form-recuperar-senha.php">Recuperar senha</a></h4>
+        </fieldset>
     </form>
 </body>
 
