@@ -35,7 +35,7 @@ $foto = $usuario1['imagem'];
         <legend>
             <h1>Perfil</h1>
         </legend>
-        <a href='foto.php'><img src="<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
+        <a href='foto.php'><img src="uploads/<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
 
         <h2><?php echo "Olá $noo!<br>"; ?></h2>
 

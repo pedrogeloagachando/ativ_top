@@ -1,5 +1,5 @@
 <?php
-
+require_once 'conexao.php';
 session_start();
 
 
@@ -9,8 +9,9 @@ if (!isset($_SESSION['email'])) {
     die();
 } else {
 
-    $nome = $_SESSION['email'];
+    $email = $_SESSION['email'];
 }
+
 
 
 
@@ -48,17 +49,33 @@ $fezUpload = move_uploaded_file(
     $_FILES['arquivo']['tmp_name'],
     __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao
 );
+
+
+
+
+
+
 if ($fezUpload == true) {
-    $conexao = mysqli_connect("localhost", "root", "", "topicos");
-    $sql = "UPDATE usuario SET imagem='$nomeArquivo.$extensao' WHERE email='$nome'";
+    $conexao = conectar();
+    $sql = "UPDATE usuario
+    SET imagem='$nomeArquivo.$extensao'
+    WHERE email='$email'";
     $resultado = mysqli_query($conexao, $sql);
-    if ($resultado != false) {
+
+
+
+
+
+
+
+    if ($resultado != false ) {
         // se for uma alteração de arquivo
-        if (isset($_POST['nome_arquivo'])) {
+        /*if (isset($_POST['nome_arquivo'])) {
             $apagou = unlink(__DIR__ . $pastaDestino . $_POST['nome_arquivo']);
             if ($apagou == true) {
-                $sql = "DELETE FROM arquivo WHERE nome_arquivo='" 
-                        . $_POST['nome_arquivo'] . "'";
+                $sql = "UPDATE usuario
+                SET imagem='$nomeArquivo.$extensao'
+                WHERE email='$email'" ;
                 $resultado2 = mysqli_query($conexao, $sql);
                 if ($resultado2 == false) {
                     echo "Erro ao apagar o arquivo do banco de dados.";
@@ -68,10 +85,8 @@ if ($fezUpload == true) {
                 echo "Erro ao apagar o arquivo antigo.";
                 die();
             }
-        }
-        
-
-        header("Location: index.php");
+        }*/
+        header("Location: perfil.php");
     } else {
         echo "Erro ao registrar o arquivo no banco de dados.";
     }
