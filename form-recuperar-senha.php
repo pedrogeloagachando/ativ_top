@@ -19,7 +19,7 @@
                 um link para recuperar sua senha.</h3>
 
             <h4><label>Email: <input type="text" name="email" placeholder="Email"></label></h4>
-            
+
             <input type="submit" value="Enviar email">
 
     </form>

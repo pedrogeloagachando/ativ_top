@@ -8,7 +8,7 @@ require_once "conexao.php";
 $conexao = conectar();
 
 $email = $_POST['email'];
-$sql = "SELECT * FROM usuario WHERE email='email'";
+$sql = "SELECT * FROM usuario WHERE email='$email'";
 $resultado = executarSQL($conexao, $sql);
 
 $usuario = mysqli_fetch_assoc($resultado);
@@ -16,6 +16,7 @@ $usuario = mysqli_fetch_assoc($resultado);
 if ($usuario == null) {
     echo "<h2> Você não foi cadastrado no sistema. 
     Faça seu cadastro e a seguir realize o login. </h2>";
+    echo'aqui';
     die();
 }
 
@@ -74,7 +75,7 @@ try {
     $data = new DateTime('now');
     $agora = $data->format('Y-m-d-H:i:s');
 
-    $sql2 = "INSERT INTO `ativ_top` 
+    $sql2 = "INSERT INTO `recuperar_senha` 
             (email, token, data_criacao, usado)
             VALUES ('" . $usuario['email'] . "', '$token', 
             '$agora', 0)";

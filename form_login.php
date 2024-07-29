@@ -19,6 +19,7 @@
             <br>
             <input type="submit" value="Logar">
             <h4><a href="form-recuperar-senha.php">Recuperar senha</a></h4>
+            <h4><a href="form_cad.php">Cadastrar-se</a></h4>
         </fieldset>
     </form>
 </body>
