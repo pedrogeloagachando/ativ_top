@@ -33,11 +33,11 @@ $foto = $usuario1['imagem'];
 </head>
 
 <body>
-    <form action="alterar.php" method="post">
+    <form action="alterar.php" method="post" enctype="multipart/form-data">
             <legend>
                 <h1>Foto atual</h1>
             </legend>
-            <a href='foto.php'><img src="<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
+            <a href='foto.php'><img src="uploads/<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
             
             <hr>
             

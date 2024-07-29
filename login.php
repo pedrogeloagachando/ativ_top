@@ -13,9 +13,9 @@ $usuario = mysqli_fetch_assoc($resultado);
 
 
 
-$hash = $usuario['senha'];
 
-if (password_verify($senha, $hash)) {
+
+
 
 
 
@@ -24,12 +24,17 @@ if (password_verify($senha, $hash)) {
         echo "Email não existe no sistema! por favor, primeiro realize o cadastro no sistema.";
         die();
     }
+
+    $hash = $usuario['senha'];
+    if (password_verify($senha, $hash)) {
+
+
     if ($hash == $usuario['senha']) {
         echo "Senha correta";
         header('location:perfil.php');
         session_start();
         $_SESSION['email'] = $usuario['email'];
-    }
-} else {
+    }}
+ else {
     echo "Senha inválida! Tente novamente.";
 }
