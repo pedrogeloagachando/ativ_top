@@ -14,8 +14,10 @@ if (!isset($_SESSION['email'])) {
 
 
 
-
+$teste=$_FILES['arquivo'];
 $pastaDestino = "/uploads/";
+if($_FILES['arquivo']['size'] != 0){
+//print_r($teste);
 
 // verificar se o tamanho do arquivo é maior que 2 MB
 if ($_FILES['arquivo']['size'] > 2000000) {  // condição de guarda 👮
@@ -61,35 +63,40 @@ if ($fezUpload == true) {
     SET imagem='$nomeArquivo.$extensao'
     WHERE email='$email'";
     $resultado = mysqli_query($conexao, $sql);
+    
 
-
-
+}
 
 
 
 
     if ($resultado != false ) {
         // se for uma alteração de arquivo
-        /*if (isset($_POST['nome_arquivo'])) {
+        if (isset($_POST['nome_arquivo']) and $_POST['nome_arquivo'] != "foto_perfil.jfif") {
             $apagou = unlink(__DIR__ . $pastaDestino . $_POST['nome_arquivo']);
-            if ($apagou == true) {
-                $sql = "UPDATE usuario
-                SET imagem='$nomeArquivo.$extensao'
-                WHERE email='$email'" ;
-                $resultado2 = mysqli_query($conexao, $sql);
-                if ($resultado2 == false) {
-                    echo "Erro ao apagar o arquivo do banco de dados.";
-                    die();
+            
                 }
-            } else {
+             else {
                 echo "Erro ao apagar o arquivo antigo.";
                 die();
             }
-        }*/
-        header("Location: perfil.php");
-    } else {
-        echo "Erro ao registrar o arquivo no banco de dados.";
+        
+        }
     }
-} else {
-    echo "Erro ao mover arquivo.";
-}
+
+
+    if($_POST['email'] != null){
+
+        $conexao = conectar();
+        $novoemail=$_POST['email'];
+    
+        
+
+        $sql = "UPDATE usuario
+        SET email='$novoemail'
+        WHERE email='$email'";
+        $resultado = mysqli_query($conexao, $sql);
+        
+        header('')
+
+    }

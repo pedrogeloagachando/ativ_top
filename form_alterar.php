@@ -37,14 +37,18 @@ $foto = $usuario1['imagem'];
             <legend>
                 <h1>Foto atual</h1>
             </legend>
-            <a href='foto.php'><img src="uploads/<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
-            
+            <img src="uploads/<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br>
+            <input type="hidden" name="nome_arquivo" value="<?= $foto ?>">
             <hr>
             
             <br>Trocar imagem:<br>
             <input type="file" name="arquivo"><br><br>
+            <label>Email: <input type="email" name="email"></label><br><br>
+              
+
             <input type="submit" value="Enviar">
-            <h4><a href="perfil.php">Voltar</a></h4>
+            <h4><a href="perfil.php">Voltar</a></h4><br>
+            
     </form>
 </body>
 

@@ -1,9 +1,19 @@
 <?php
 
-$nome = $_POST['email'];
-$senha = $_POST['senha'];
+
+if (!isset($_POST['email'])) {
+    echo "não está logado";
+    die();
+} else {
+
+    $nome = $_POST['email'];
+}
 require_once "conexao.php";
 $conexao = conectar();
+
+$senha = $_POST['senha'];
+
+
 
 $sql = "SELECT * FROM usuario WHERE email='$nome'";
 
