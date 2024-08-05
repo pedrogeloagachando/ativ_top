@@ -3,8 +3,6 @@ require_once 'conexao.php';
 $conexao = conectar();
 session_start();
 
-
-
 if (!isset($_SESSION['email'])) {
     echo "Você não está logado";
     die();
@@ -13,24 +11,14 @@ if (!isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 }
 
-
-
 $teste = $_FILES['arquivo'];
 $pastaDestino = "/uploads/";
 
 
 
-
-
-
-
-
 if ($_POST['email'] != null) {
-
     
     $novoemail = $_POST['email'];
-
-
 
     $sql = "UPDATE usuario
         SET email='$novoemail'

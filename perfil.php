@@ -26,11 +26,13 @@ $em = $usuario1['email'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <fieldset>
         <legend>
@@ -40,9 +42,12 @@ $em = $usuario1['email'];
 
         <h2><?php echo "Olá $noo!<br>"; ?></h2>
         <h2><?php echo "Email:$em<br>"; ?></h2>
+
         <h4><a href='form_alterar.php'>Alterar perfil:</a></h4>
         <h4><a href='form_alterar.php'>Deletar:</a></h4>
+        
         <h4><a href='sair.php'>Sair:</a></h4>
     </fieldset>
 </body>
+
 </html>
