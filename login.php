@@ -4,7 +4,6 @@ if (!isset($_POST['email'])) {
     echo "não está logado";
     die();
 } else {
-
     $nome = $_POST['email'];
 }
 require_once "conexao.php";

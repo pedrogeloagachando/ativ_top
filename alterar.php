@@ -17,7 +17,7 @@ $pastaDestino = "/uploads/";
 
 
 if ($_POST['email'] != null) {
-    
+
     $novoemail = $_POST['email'];
 
     $sql = "UPDATE usuario
@@ -33,7 +33,7 @@ if ($_POST['email'] != null) {
         session_destroy();
         session_start();
         $_SESSION['email'] = $novoemail;
-       // header('location:perfil.php');
+        // header('location:perfil.php');
     } else {
         echo "Erro ao alterar email";
     }
@@ -42,19 +42,19 @@ if ($_POST['email'] != null) {
 
 if ($_POST['nome'] != null) {
 
-    
+
     $novonome = $_POST['nome'];
-    $em=$_SESSION['email'];
+    $em = $_SESSION['email'];
 
 
     $sql = "UPDATE usuario
         SET nome='$novonome'
         WHERE email='$em'";
     $resultado = mysqli_query($conexao, $sql);
-   
+
 
     if ($resultado != false) {
-        echo'trocou';
+        echo 'trocou';
     } else {
         echo "Erro ao alterar nome";
     }
@@ -107,7 +107,7 @@ if ($_FILES['arquivo']['size'] != 0) {
 
 
     if ($fezUpload == true) {
-        $em=$_SESSION['email'];
+        $em = $_SESSION['email'];
         $sql = "UPDATE usuario
     SET imagem='$nomeArquivo.$extensao'
     WHERE email='$em'";

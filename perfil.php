@@ -44,7 +44,7 @@ $em = $usuario1['email'];
         <h2><?php echo "Email:$em<br>"; ?></h2>
 
         <h4><a href='form_alterar.php'>Alterar perfil:</a></h4>
-        <h4><a href='form_alterar.php'>Deletar:</a></h4>
+        <h4><a href='deletar.php'>Deletar:</a></h4>
         
         <h4><a href='sair.php'>Sair:</a></h4>
     </fieldset>
