@@ -30,13 +30,11 @@ include 'config.php';
 $mail = new PHPMailer(true);
 
 try {
-    //configurações
     $mail->CharSet = 'UTF-8';
     $mail->Encoding = 'base64';
     $mail->setLanguage('br');
-    //$mail ->SMTPDebug = SMTP::DEBUG_OFF; //tira as mensagens de erro
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER; //imprime as mensagens de erro
-    $mail->isSMTP();                       //envia o email usando SMTP
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = TRUE;
     $mail->Username = $config['email'];
@@ -51,22 +49,20 @@ try {
         )
     );
 
-    //recipientes
     $mail->setFrom($config['email'], 'Atividade de Tópicos');
     $mail->addAddress($usuario['email'], $usuario['nome']);
     $mail->addReplyTo($config['email'], 'Atividade de Tópicos');
 
-    //content
     $mail->isHTML(true);
     $mail->Subject = 'Recuperação de Senha do Sistema';
     $mail->Body = 'Olá! <br>
-    Você solicitou a recuperação de senha no nosso sistema.
-    Clique no link abaixo para realizar a troca de senha:<br>
+    Você solicitou a recuperação de senha no nosso sistema. <br>
+    Clique no link para realizar a troca de senha:<br>
 <a href="' . $_SERVER['SERVER_NAME'] . '/recuperar-senha/nova_senha.php?email=' . $usuario['email'] .
-        '&token=' . $token . '">Clique aqui para recuperar o acesso à sua conta!</a>
+        '&token=' . $token . '">Clique aqui para recuperar senha!</a>
         <br>
         Atenciosamente<br>
-        Equipe do sistema Pedro e Uriel  :-D';
+        Equipe do sistema Pedro e Uriel 🤟🏻🚗☃🌬🌊🧔🏻';
 
     $mail->send();
     echo '<h2>Email enviado com sucesso!<br> Confira o seu email.</h2>';
