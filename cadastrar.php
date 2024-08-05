@@ -21,4 +21,4 @@ if ($resultado === false) {
             . mysqli_errno($conexao) . ":" . mysqli_error($conexao);
     }
 }
-header("location: form_login.php");
+header("location: index.php");

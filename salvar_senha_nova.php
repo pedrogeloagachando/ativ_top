@@ -54,5 +54,5 @@ if ($recuperar == null) {
     executarSQL($conexao, $sql3);
 
     echo "<h2>Nova senha cadastrada com sucesso! Faça o login para acessar o sistema. </h2><br>";
-    echo "<h2><a href='form_login.php'>Acessar o sistema</a></h2>";
+    echo "<h2><a href='index.php'>Acessar o sistema</a></h2>";
 }

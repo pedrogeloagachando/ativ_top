@@ -22,7 +22,7 @@
 
             <input type="submit" value="Enviar email">
 
-            <h4><a href="form_login.php">Voltar para o login</a></h4>
+            <h4><a href="index.php">Voltar para o login</a></h4>
 
     </form>
 

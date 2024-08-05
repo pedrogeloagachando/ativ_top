@@ -19,7 +19,7 @@
             <br>
             <input type="submit" value="Cadastrar-se">
 
-            <h4><a href="form_login.php">Ir para  login</a></h4>
+            <h4><a href="index.php">Ir para  login</a></h4>
         </fieldset>
     </form>
 </body>
