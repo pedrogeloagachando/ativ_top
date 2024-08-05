@@ -97,6 +97,6 @@ if ($fezUpload == true) {
         WHERE email='$email'";
         $resultado = mysqli_query($conexao, $sql);
         
-        header('')
+        header('');
 
     }

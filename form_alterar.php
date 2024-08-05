@@ -36,6 +36,7 @@ $foto = $usuario1['imagem'];
     <form action="alterar.php" method="post" enctype="multipart/form-data">
             <legend>
                 <h1>Foto atual</h1>
+                <h2><?php echo $noo; ?></h2>
             </legend>
             <img src="uploads/<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br>
             <input type="hidden" name="nome_arquivo" value="<?= $foto ?>">
