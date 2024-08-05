@@ -19,6 +19,7 @@ $usuario1 = mysqli_fetch_assoc($resultado);
 $noo = $usuario1['nome'];
 
 $foto = $usuario1['imagem'];
+$em = $usuario1['email'];
 ?>
 
 
@@ -38,8 +39,10 @@ $foto = $usuario1['imagem'];
         <a href='foto.php'><img src="uploads/<?php echo "$foto";  ?>" alt='Sua imagem de perfil'><br><br></a>
 
         <h2><?php echo "Olá $noo!<br>"; ?></h2>
-
+        <h2><?php echo "Email:$em<br>"; ?></h2>
         <h4><a href='form_alterar.php'>Alterar perfil:</a></h4>
+        <h4><a href='form_alterar.php'>Deletar:</a></h4>
+        <h4><a href='sair.php'>Sair:</a></h4>
     </fieldset>
 </body>
 </html>
