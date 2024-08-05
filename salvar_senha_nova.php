@@ -43,7 +43,9 @@ if ($recuperar == null) {
         die();
     }
 
-    $sql2 = "UPDATE usuario SET senha='$senha' WHERE email='$email'";
+    $hash = password_hash($senha, PASSWORD_ARGON2I);
+
+    $sql2 = "UPDATE usuario SET senha='$hash' WHERE email='$email'";
 
     executarSQL($conexao, $sql2);
 

@@ -40,7 +40,6 @@ $usuario = mysqli_fetch_assoc($resultado);
 
 
     if ($hash == $usuario['senha']) {
-        echo "Senha correta";
         header('location:perfil.php');
         session_start();
         $_SESSION['email'] = $usuario['email'];

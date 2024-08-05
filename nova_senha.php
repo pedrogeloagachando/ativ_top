@@ -18,7 +18,8 @@ if ($recuperar == null) {
     $agora = new DateTime('now');
     $data_criacao = DateTime::createFromFormat(
         'Y-m-d H:i:s',
-        $recuperar['data_criacao']);
+        $recuperar['data_criacao']
+    );
 
     $UmDia = DateInterval::createFromDateString('1 day');
     $dataExpiracao = date_add($data_criacao, $UmDia);
@@ -41,16 +42,19 @@ if ($recuperar == null) {
     <title>Nova senha</title>
 </head>
 <body>
-    <form action="salvar_senha_nova.php">
+    <form action="salvar_senha_nova.php" method="POST">
         <fieldset>
             <legend>
                 <h1>Nova Senha</h1>
             </legend>
             <input type="hidden" name="email" value="<?= $email ?>">
             <input type="hidden" name="token" value="<?= $token ?>">
+
             <h3>Email: <?= $email ?> <br> <br> <br>
-                <label>Senha: <input type="password" nome="senha" placeholder="Senha"></label> <br> <br>
-                <label>Repetir senha: <input type="password" nome="repetirSenha" placeholder="Senha"></label> <br> <br>
+
+                <label>Senha: <input type="password" name="senha" placeholder="Senha"></label> <br> <br>
+                <label>Repetir senha: <input type="password" name="repetirSenha" placeholder="Senha"></label> <br> <br>
+
                 <input type="submit" value="Salvar">
             </h3>
         </fieldset>
