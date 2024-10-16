@@ -17,7 +17,7 @@ if ($resultado1 == false) {
 $usuario1 = mysqli_fetch_assoc($resultado1);
 
 
-
+,
 $foto = $usuario1['imagem'];
 $sql = "DELETE FROM usuario WHERE email='$email'";
 $resultado = executarSQL($conexao, $sql);
