@@ -6,7 +6,7 @@ if (!isset($_SESSION['email'])) {
     die();
 } else {
 
-    $nome = $_SESSION['email'];
+    $nome = $_SESSION['email']; 
 }
 require_once "conexao.php";
 $conexao = conectar();
